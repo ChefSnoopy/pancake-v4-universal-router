@@ -16,7 +16,8 @@ import {ERC20} from "solmate/src/tokens/ERC20.sol";
 import {IAllowanceTransfer} from "permit2/src/interfaces/IAllowanceTransfer.sol";
 import {IERC721Permit} from "pancake-v4-periphery/src/pool-cl/interfaces/IERC721Permit.sol";
 import {ActionConstants} from "pancake-v4-periphery/src/libraries/ActionConstants.sol";
-import {BaseActionsRouter} from "pancake-v4-periphery/src/base/BaseActionsRouter.sol";
+// import {BaseActionsRouter} from "pancake-v4-periphery/src/base/BaseActionsRouter.sol";
+import {BaseActionsRouter} from "../V4Router/base/BaseActionsRouter.sol";
 
 /// @title Decodes and Executes Commands
 /// @notice Called by the UniversalRouter contract to efficiently decode and execute a singular command
@@ -350,4 +351,6 @@ abstract contract Dispatcher is
     /// @param commands A set of concatenated commands, each 1 byte in length
     /// @param inputs An array of byte strings containing abi encoded inputs for each command
     function execute(bytes calldata commands, bytes[] calldata inputs) external payable virtual;
+
+    function _executeExtraLogic(bytes calldata data) internal override {}
 }

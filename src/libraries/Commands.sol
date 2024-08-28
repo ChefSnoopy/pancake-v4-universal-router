@@ -57,4 +57,7 @@ library Commands {
     uint256 constant STABLE_SWAP_EXACT_IN = 0x22;
     uint256 constant STABLE_SWAP_EXACT_OUT = 0x23;
     // COMMAND_PLACEHOLDER for 0x23-0x3f (all unused)
+
+    // Mixed swap commands
+    uint256 constant MIXED_SWAP_EXACT_OUT = 0x21;
 }

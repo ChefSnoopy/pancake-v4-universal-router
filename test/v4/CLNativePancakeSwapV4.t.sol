@@ -113,7 +113,7 @@ contract CLNativePancakeSwapV4Test is BasePancakeSwapV4 {
         // call v4_swap
         bytes memory commands = abi.encodePacked(bytes1(uint8(Commands.V4_SWAP)));
         bytes[] memory inputs = new bytes[](1);
-        inputs[0] = data;
+        inputs[0] = abi.encode(true, data);
 
         // gas would be higher as its the first swap
         assertEq(alice.balance, 0.01 ether);
@@ -139,7 +139,7 @@ contract CLNativePancakeSwapV4Test is BasePancakeSwapV4 {
         // call v4_swap
         bytes memory commands = abi.encodePacked(bytes1(uint8(Commands.V4_SWAP)));
         bytes[] memory inputs = new bytes[](1);
-        inputs[0] = data;
+        inputs[0] = abi.encode(true, data);
 
         // gas would be higher as its the first swap
         assertEq(alice.balance, 0 ether);
@@ -165,7 +165,7 @@ contract CLNativePancakeSwapV4Test is BasePancakeSwapV4 {
         // call v4_swap
         bytes memory commands = abi.encodePacked(bytes1(uint8(Commands.V4_SWAP)));
         bytes[] memory inputs = new bytes[](1);
-        inputs[0] = data;
+        inputs[0] = abi.encode(true, data);
 
         // gas would be higher as its the first swap
         assertEq(alice.balance, 0 ether);
